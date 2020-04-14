@@ -2,7 +2,7 @@ package Model;
 
 import java.util.ArrayList;
 
-public class Boss {
+public class Boss extends Person{
     private boolean isThereBoss;
     public boolean isThereBoss(){
         return false;
