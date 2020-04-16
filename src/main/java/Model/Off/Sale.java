@@ -1,4 +1,6 @@
-package Model;
+package Model.Off;
+
+import Model.Off.Off;
 
 import java.util.ArrayList;
 

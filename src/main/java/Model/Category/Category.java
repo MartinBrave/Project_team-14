@@ -1,4 +1,4 @@
-package Model;
+package Model.Category;
 
 import java.util.ArrayList;
 
