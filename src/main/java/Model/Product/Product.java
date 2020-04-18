@@ -1,9 +1,7 @@
 package Model.Product;
 
-import Model.Account.Salesman;
 import Model.Category.Category;
 import Model.Confirmation;
-import Model.Off.Sale;
 import Model.RandomString;
 
 import java.io.Serializable;
@@ -73,11 +71,11 @@ public class Product extends RandomString implements Serializable {
         return Comment.isThereAnyCommentForProduct(this.productID);
     }
 
-    public ArrayList<String> getComment() {
+    public ArrayList<String> getComments() {
         return Comment.getStringFormattedCommentsForProductWithID(this.productID);
     }
 
-    public boolean isConfirmedForSalesmanWithUsername(String username) {
+    private boolean isConfirmedForSalesmanWithUsername(String username) {
         return this.confirmationState.get(username).equals(Confirmation.ACCEPTED);
     }
 
