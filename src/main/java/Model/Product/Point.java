@@ -38,19 +38,16 @@ public class Point extends RandomString implements Serializable {
     }
 
     public static float getAveragePointForProduct(String productID) {
+        if(getNumberOfPeopleVotedForProduct(productID)==0){
+            return -1;
+        }
         int sum = 0;
-        int numberOfPeopleVoted = 0;
         for (Point point : allPoints) {
             if (point.productID.equals(productID)) {
                 sum += point.point;
-                numberOfPeopleVoted++;
             }
         }
-        if (numberOfPeopleVoted != 0) {
-            return (float) sum / (float) numberOfPeopleVoted;
-        } else {
-            return -1;
-        }
+        return (float) sum / (float) getNumberOfPeopleVotedForProduct(productID);
     }
 
     public static int getNumberOfPeopleVotedForProduct(String productID) {
