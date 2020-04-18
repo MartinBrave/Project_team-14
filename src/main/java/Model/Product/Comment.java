@@ -36,6 +36,8 @@ public class Comment extends RandomString implements Serializable {
         return null;
     }
 
+    //  when we need get comments for a product for customer view we use the method below
+
     public static ArrayList<String> getStringFormattedCommentsForProductWithID(String productID) {
         ArrayList<String> list = new ArrayList<>();
         for (Comment comment : allComments) {
@@ -45,6 +47,9 @@ public class Comment extends RandomString implements Serializable {
         }
         return list;
     }
+
+    //in the boss menu when the boss wants to check request one part is check comments
+    //that are not still accpeted nor denied, so with moethod below we get not checked methods
 
     public static ArrayList<String> getStringFormattedCheckingComments() {
         ArrayList<String> list = new ArrayList<>();
@@ -56,6 +61,8 @@ public class Comment extends RandomString implements Serializable {
         return list;
     }
 
+    //it gives us customer view of a product
+
     public String toStringForProductView() {
         String result = "";
         result += "Sender: " + this.senderUsername + "\n";
@@ -63,6 +70,8 @@ public class Comment extends RandomString implements Serializable {
         result += "Date: " + this.date.toString() + "\n";
         return result;
     }
+
+    //it gives us boss view for a product
 
     public String toStringForCheckingProduct() {
         String result = "";
@@ -95,11 +104,7 @@ public class Comment extends RandomString implements Serializable {
         return confirmationState.equals(Confirmation.CHECKING);
     }
 
-    @Override
     public String createID() {
-        String result = "";
-        result += "Comment---";
-        result += getRandomString();
-        return result;
+        return RandomString.createID("Comment");
     }
 }

@@ -1,11 +1,13 @@
 package Model.Account;
 
+import Model.Confirmation;
+
 import java.io.*;
 import java.util.ArrayList;
 
 public class Salesman extends Account implements Serializable {
     private String company;
-    private boolean confirmationState;
+    private Confirmation confirmationState;
     private int credit;
     private ArrayList<Salesman> allSalesmen;
 
@@ -13,7 +15,7 @@ public class Salesman extends Account implements Serializable {
         super(username, password, firstName, secondName, Email, telephone, role);
         this.company = company;
         this.credit = credit;
-        confirmationState = false;
+        confirmationState = Confirmation.CHECKING;
     }
 
     public String getCompany() {
@@ -25,7 +27,7 @@ public class Salesman extends Account implements Serializable {
     }
 
     public boolean isConfirmed() {
-        return confirmationState;
+        return confirmationState.equals(Confirmation.ACCEPTED);
     }
 
 
@@ -34,7 +36,7 @@ public class Salesman extends Account implements Serializable {
         String result = this.toStringGenerals();
         result += "Company: " + this.getCompany() + "\n";
         result += "Credit: " + this.getCredit() + "\n";
-        result += "Confirmation State: " + this.isConfirmed() + "\n";
+        result += "Confirmation State: " + this.confirmationState.toString() + "\n";
         return result;
     }
 

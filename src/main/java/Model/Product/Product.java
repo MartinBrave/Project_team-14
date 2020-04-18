@@ -123,11 +123,7 @@ public class Product extends RandomString {
         return result.toString();
     }
 
-    @Override
     public String createID() {
-        String result = "";
-        result += "Product---";
-        result += getRandomString();
-        return result;
+        return RandomString.createID("Product");
     }
 }

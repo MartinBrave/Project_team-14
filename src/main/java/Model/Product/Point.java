@@ -63,10 +63,7 @@ public class Point extends RandomString {
     }
 
     public String createID() {
-        String result = "";
-        result += "Point---";
-        result += getRandomString();
-        return result;
+        return RandomString.createID("Point");
     }
 
 

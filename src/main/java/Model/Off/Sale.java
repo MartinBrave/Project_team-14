@@ -1,6 +1,7 @@
 package Model.Off;
 
 import Model.Off.Off;
+import Model.RandomString;
 
 import java.util.ArrayList;
 
@@ -19,8 +20,7 @@ public class Sale extends Off {
         return productIDs;
     }
 
-    @Override
     public String createID() {
-        return null;
+        return RandomString.createID("Sale");
     }
 }
