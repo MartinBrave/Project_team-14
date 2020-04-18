@@ -19,4 +19,5 @@ public class Boss extends Account implements Serializable {
     public String toString() {
         return this.toStringGenerals();
     }
+
 }

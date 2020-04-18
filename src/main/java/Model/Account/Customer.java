@@ -1,5 +1,7 @@
 package Model.Account;
 
+import Model.RandomString;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -36,4 +38,5 @@ public class Customer extends Account implements Serializable {
     public String toString() {
         return this.toStringGenerals() + "Credit: " + this.getCredit();
     }
+
 }

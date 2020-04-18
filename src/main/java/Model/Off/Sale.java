@@ -11,11 +11,11 @@ public class Sale extends Off {
     private String salesmanID;
     private String status;
 
-    public boolean isSaleAuthentic(){
+    public boolean isSaleAuthentic() {
         return false;
     }
 
-    public ArrayList getProductIDs(){
+    public ArrayList getProductIDs() {
         return productIDs;
     }
 }

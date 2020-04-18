@@ -1,8 +1,10 @@
 package Model.Product;
 
+import Model.RandomString;
+
 import java.util.ArrayList;
 
-public class Point {
+public class Point implements RandomString {
     private static transient ArrayList<Point> allPoints = new ArrayList<>();
     private String pointID;
     private String username;

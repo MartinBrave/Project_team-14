@@ -37,4 +37,5 @@ public class Salesman extends Account implements Serializable {
         result += "Confirmation State: " + this.isConfirmed() + "\n";
         return result;
     }
+
 }

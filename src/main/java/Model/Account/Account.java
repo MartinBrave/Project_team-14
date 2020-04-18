@@ -1,6 +1,8 @@
 package Model.Account;
 
 import java.util.ArrayList;
+import Model.Account.Role;
+import Model.RandomString;
 
 public abstract class Account {
     private String username;
@@ -9,7 +11,7 @@ public abstract class Account {
     private String secondName;
     private String Email;
     private String telephone;
-    private String role;
+    private Role role;
     private static transient ArrayList<Account> allAccounts=new ArrayList<>();
 
     public Account(String username, String password, String firstName, String secondName, String Email, String telephone, String role){
@@ -19,8 +21,14 @@ public abstract class Account {
         this.secondName=secondName;
         this.Email=Email;
         this.telephone=telephone;
-        this.role=role;
         allAccounts.add(this);
+        if(role.equalsIgnoreCase("boss")){
+            this.role=Role.BOSS;
+        } else if (role.equalsIgnoreCase("customer")){
+            this.role=Role.CUSTOMER;
+        } else if (role.equalsIgnoreCase("salesman")){
+            this.role=Role.SALESMAN;
+        }
     }
 
     public String getFirstName() {
@@ -40,7 +48,7 @@ public abstract class Account {
     }
 
     public String getRole() {
-        return role;
+        return role.name();
     }
 
     public String getTelephone() {

@@ -1,8 +1,8 @@
 package Controller;
 
-import Model.Person;
+import Model.Account.Account;
 
 public class Server {
-    private Person loginUser;
+    private Account loginUser;
     private String answer;
 }
