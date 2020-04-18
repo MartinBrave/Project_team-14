@@ -6,11 +6,12 @@ import Model.Confirmation;
 import Model.Off.Sale;
 import Model.RandomString;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class Product extends RandomString {
+public class Product extends RandomString implements Serializable {
     private transient static ArrayList<Product> allProducts = new ArrayList<>();
     private ArrayList<String> salesmanIDs = new ArrayList<>();
     private String productID;

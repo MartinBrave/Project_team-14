@@ -2,6 +2,7 @@ package Model.Off;
 
 import Model.RandomString;
 
+import java.io.Serializable;
 import java.util.Date;
 
 public abstract class Off extends RandomString {

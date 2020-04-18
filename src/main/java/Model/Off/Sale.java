@@ -3,9 +3,10 @@ package Model.Off;
 import Model.Off.Off;
 import Model.RandomString;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Sale extends Off {
+public class Sale extends Off implements Serializable {
     private static transient ArrayList allSaleIDs;
     private ArrayList productIDs;
     private String saleID;
