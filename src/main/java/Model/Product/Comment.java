@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Comment implements Serializable, RandomString {
+public class Comment extends RandomString implements Serializable {
     private static transient ArrayList<Comment> allComments = new ArrayList<>();
     private String commentID;
     private String text;
@@ -97,6 +97,9 @@ public class Comment implements Serializable, RandomString {
 
     @Override
     public String createID() {
-        return null;
+        String result = "";
+        result += "Comment---";
+        result += getRandomString();
+        return result;
     }
 }

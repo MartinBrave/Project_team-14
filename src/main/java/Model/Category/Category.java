@@ -5,7 +5,7 @@ import Model.RandomString;
 import java.util.ArrayList;
 import java.io.*;
 
-public class Category implements Serializable, RandomString {
+public class Category extends RandomString implements Serializable {
     private ArrayList<String> allProductIDs;
     private String categoryID;
     private String parentCategoryID;
@@ -14,6 +14,9 @@ public class Category implements Serializable, RandomString {
 
     @Override
     public String createID() {
-        return null;
+        String result = "";
+        result += "Category---";
+        result += getRandomString();
+        return result;
     }
 }

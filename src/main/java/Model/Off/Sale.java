@@ -18,4 +18,9 @@ public class Sale extends Off {
     public ArrayList getProductIDs() {
         return productIDs;
     }
+
+    @Override
+    public String createID() {
+        return null;
+    }
 }

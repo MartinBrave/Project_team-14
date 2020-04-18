@@ -1,5 +1,8 @@
 package Model;
 
-public interface RandomString {
-    String createID();
+public abstract class RandomString {
+    public String getRandomString(){
+        return null;
+    }
+    public abstract String createID();
 }

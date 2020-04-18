@@ -18,7 +18,10 @@ public class BuyLog extends Log implements Serializable {
 
     @Override
     public String createID() {
-        return null;
+        String result = "";
+        result += "BuyLog---";
+        result += getRandomString();
+        return result;
     }
 
 

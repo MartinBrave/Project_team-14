@@ -5,7 +5,7 @@ import Model.RandomString;
 import java.util.ArrayList;
 import java.util.Date;
 
-public abstract class Log implements RandomString {
+public abstract class Log extends RandomString {
     private static transient ArrayList<Log> allLogs = new ArrayList<>();
     private String ID;
     private Date date;

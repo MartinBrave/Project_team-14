@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class Product implements RandomString {
+public class Product extends RandomString {
     private transient static ArrayList<Product> allProducts = new ArrayList<>();
     private ArrayList<String> salesmanIDs = new ArrayList<>();
     private String productID;
@@ -107,24 +107,27 @@ public class Product implements RandomString {
         return getProductWithID(productID) != null;
     }
 
-    @Override
-    public String createID() {
-        return null;
-    }
-
     public String toStringForCustomerView() {
-        String result = "";
-        result += "Name: " + this.name + "\n";
-        result += "Brand: " + this.brand + "\n";
-        result += "Description: " + this.description + "\n";
-        result += "Sellers: " + "\n";
+        StringBuilder result = new StringBuilder();
+        result.append("Name: ").append(this.name).append("\n");
+        result.append("Brand: ").append(this.brand).append("\n");
+        result.append("Description: ").append(this.description).append("\n");
+        result.append("Sellers: " + "\n");
         for (String salesmanID : salesmanIDs) {
             if (!doesSalesmanSellProductWithUsername(salesmanID) || !isAvailableBySalesmanWithUsername(salesmanID)) {
                 continue;
             }
-            result += "Salesman: " + salesmanID;
-            result = " Price: " + price.get(salesmanID) + "\n";
+            result.append("Salesman: ").append(salesmanID);
+            result = new StringBuilder(" Price: " + price.get(salesmanID) + "\n");
         }
+        return result.toString();
+    }
+
+    @Override
+    public String createID() {
+        String result = "";
+        result += "Product---";
+        result += getRandomString();
         return result;
     }
 }

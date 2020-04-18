@@ -4,7 +4,7 @@ import Model.RandomString;
 
 import java.util.ArrayList;
 
-public class Point implements RandomString {
+public class Point extends RandomString {
     private static transient ArrayList<Point> allPoints = new ArrayList<>();
     private String pointID;
     private String username;
@@ -63,7 +63,10 @@ public class Point implements RandomString {
     }
 
     public String createID() {
-        return null;
+        String result = "";
+        result += "Point---";
+        result += getRandomString();
+        return result;
     }
 
 
