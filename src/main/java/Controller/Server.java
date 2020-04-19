@@ -1,11 +1,12 @@
 package Controller;
 
-import Model.Person;
+import Model.Account.Account;
+import Model.Product.Product;
 
 import java.util.ArrayList;
 
 public class Server {
-    private ArrayList<Person> loginUsers;
+    private ArrayList<Account> loginUsers;
     private LoginManager loginManager;
     private BossManager bossManager;
     private CustomerManager customerManager;
@@ -22,6 +23,6 @@ public class Server {
         salesmanManager = new SalesmanManager();
         pageManager = new PageManager();
         productPageManager = new ProductPageManager();
-        abstractCart = new ArrayList<Product>();
+        abstractCart = new ArrayList<>();
     }
 }
