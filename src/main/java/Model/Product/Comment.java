@@ -37,25 +37,26 @@ public class Comment extends RandomString implements Serializable {
     }
 
     //  when we need get comments for a product for customer view we use the method below
+    //and it return all commentIDs that have the property we want
 
-    public static ArrayList<String> getStringFormattedCommentsForProductWithID(String productID) {
+    public static ArrayList<String> getCommentsForProductWithID(String productID) {
         ArrayList<String> list = new ArrayList<>();
         for (Comment comment : allComments) {
             if (comment.isConfirmed() && comment.getCommentID().equals(productID)) {
-                list.add(comment.toStringForProductView());
+                list.add(comment.commentID);
             }
         }
         return list;
     }
 
     //in the boss menu when the boss wants to check request one part is check comments
-    //that are not still accpeted nor denied, so with moethod below we get not checked methods
+    //that are not still accepted nor denied, so with method below we get not checked commentIDs
 
-    public static ArrayList<String> getStringFormattedCheckingComments() {
+    public static ArrayList<String> getCheckingComments() {
         ArrayList<String> list = new ArrayList<>();
         for (Comment comment : allComments) {
             if (comment.isChecking()) {
-                list.add(comment.toStringForCheckingProduct());
+                list.add(comment.commentID);
             }
         }
         return list;

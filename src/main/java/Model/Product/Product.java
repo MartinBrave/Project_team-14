@@ -51,6 +51,19 @@ public class Product extends RandomString implements Serializable {
         return name;
     }
 
+    public int getPriceBySalesmanID(String salesmanID) {
+        return price.get(salesmanID);
+    }
+
+    public static String getNameByID(String productID) {
+        for (Product product : allProducts) {
+            if (product.productID.equals(productID)) {
+                return product.getName();
+            }
+        }
+        return null;
+    }
+
     public static ArrayList<Product> getAllProducts() {
         return allProducts;
     }
