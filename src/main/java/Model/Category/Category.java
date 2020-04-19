@@ -5,8 +5,9 @@ import Model.RandomString;
 import java.util.ArrayList;
 import java.io.*;
 
+import static Model.Storage.*;
+
 public class Category extends RandomString implements Serializable {
-    private static transient ArrayList<Category> allCategories = new ArrayList<>();
     private ArrayList<String> allProductIDs = new ArrayList<>();
     private ArrayList<String> subCategoryIDs = new ArrayList<>();
     private String categoryID;

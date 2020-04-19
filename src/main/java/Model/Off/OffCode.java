@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+import static Model.Storage.*;
+
 public class OffCode extends Off implements Serializable {
-    private static transient ArrayList<OffCode> allOffCodes = new ArrayList<>();
     private int ceiling;
     private String offCodeID;
     private int numberOfTimesCanBeUsed;

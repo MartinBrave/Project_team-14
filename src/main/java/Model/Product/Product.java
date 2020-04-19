@@ -8,9 +8,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static Model.Storage.*;
 
 public class Product extends RandomString implements Serializable {
-    private transient static ArrayList<Product> allProducts = new ArrayList<>();
     private ArrayList<String> salesmanIDs = new ArrayList<>();
     private String productID;
     private String name;
@@ -85,7 +85,7 @@ public class Product extends RandomString implements Serializable {
     }
 
     public ArrayList<String> getComments() {
-        return Comment.getStringFormattedCommentsForProductWithID(this.productID);
+        return Comment.getCommentsForProductWithID(this.productID);
     }
 
     private boolean isConfirmedForSalesmanWithUsername(String username) {

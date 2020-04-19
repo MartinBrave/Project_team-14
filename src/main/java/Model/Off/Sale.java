@@ -8,8 +8,9 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+import static Model.Storage.*;
+
 public class Sale extends Off implements Serializable {
-    private static transient ArrayList<Sale> allSales;
     private ArrayList<String> productIDs;
     private String saleID;
     private String salesmanID;

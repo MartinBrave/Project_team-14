@@ -7,8 +7,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
+import static Model.Storage.*;
+
 public class Comment extends RandomString implements Serializable {
-    private static transient ArrayList<Comment> allComments = new ArrayList<>();
     private String commentID;
     private String text;
     private String senderUsername;

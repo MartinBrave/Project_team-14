@@ -4,11 +4,11 @@ import Model.RandomString;
 
 import java.io.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
+import static Model.Storage.*;
+
 public class BuyLog extends Log implements Serializable {
-    private transient static ArrayList<BuyLog> allBuyLogs = new ArrayList<>();
 
     //the first argument is productID and the second one is salesmanID
     private HashMap<String, String> products=new HashMap<>();

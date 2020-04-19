@@ -3,10 +3,10 @@ package Model.Product;
 import Model.RandomString;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+
+import static Model.Storage.*;
 
 public class Point extends RandomString implements Serializable {
-    private static transient ArrayList<Point> allPoints = new ArrayList<>();
     private String pointID;
     private String username;
     private String productID;
@@ -38,7 +38,7 @@ public class Point extends RandomString implements Serializable {
     }
 
     public static float getAveragePointForProduct(String productID) {
-        if(getNumberOfPeopleVotedForProduct(productID)==0){
+        if (getNumberOfPeopleVotedForProduct(productID) == 0) {
             return -1;
         }
         int sum = 0;

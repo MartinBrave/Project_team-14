@@ -3,19 +3,21 @@ package Model.Account;
 import Model.Confirmation;
 
 import java.io.*;
-import java.util.ArrayList;
+
+import static Model.Storage.*;
 
 public class Salesman extends Account implements Serializable {
     private String company;
     private Confirmation confirmationState;
     private int credit;
-    private ArrayList<Salesman> allSalesmen;
 
     public Salesman(String username, String password, String firstName, String secondName, String Email, String telephone, String role, String company, int credit) {
         super(username, password, firstName, secondName, Email, telephone, role);
         this.company = company;
         this.credit = credit;
         confirmationState = Confirmation.CHECKING;
+        allSalesman.add(this);
+
     }
 
     public String getCompany() {

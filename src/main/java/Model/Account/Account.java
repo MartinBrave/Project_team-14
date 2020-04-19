@@ -1,8 +1,6 @@
 package Model.Account;
 
-import java.util.ArrayList;
-import Model.Account.Role;
-import Model.RandomString;
+import static Model.Storage.*;
 
 public abstract class Account {
     private String username;
@@ -12,7 +10,6 @@ public abstract class Account {
     private String Email;
     private String telephone;
     private Role role;
-    private static transient ArrayList<Account> allAccounts=new ArrayList<>();
 
     public Account(String username, String password, String firstName, String secondName, String Email, String telephone, String role){
         this.username=username;
