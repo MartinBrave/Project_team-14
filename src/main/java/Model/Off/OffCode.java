@@ -84,7 +84,7 @@ public class OffCode extends Off implements Serializable {
     //return string formatted off code for boss menu
 
     public String toString() {
-        StringBuilder result = new StringBuilder(toStringGenerals());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append("Number Of Times Can Be Still Used: ").append(numberOfTimesCanBeUsed).append("\n");
         result.append("Users That Can Use It: " + "\n");
         for (String user : userNamesCanUseIt) {

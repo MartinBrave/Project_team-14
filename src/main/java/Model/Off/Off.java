@@ -25,7 +25,7 @@ public abstract class Off extends RandomString {
         return now.before(end) && now.after(start);
     }
 
-    public String toStringGenerals() {
+    public String toString() {
         String result = "";
         result += "Sale Percentage: " + percentage + "\n";
         result += "Start Date: " + start.toString() + "\n";

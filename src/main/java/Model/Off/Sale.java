@@ -102,7 +102,7 @@ public class Sale extends Off implements Serializable {
     }
 
     public String toString() {
-        StringBuilder result = new StringBuilder(toStringGenerals());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append("Products: " + "\n");
         for (String ID : productIDs) {
             result.append(Product.getNameByID(ID)).append("\n");

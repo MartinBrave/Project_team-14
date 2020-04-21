@@ -73,7 +73,7 @@ public abstract class Account {
         return null;
     }
 
-    public String toStringGenerals() {
+    public String toString() {
         String result = "";
         result = result + "Username: " + this.getUsername() + "\n";
         result = result + "Name: " + this.getFirstName() + " " + this.getSecondName() + "\n";
@@ -83,6 +83,5 @@ public abstract class Account {
         return result;
     }
 
-    public abstract String toString();
 
 }

@@ -36,7 +36,7 @@ public class Customer extends Account implements Serializable {
 
     @Override
     public String toString() {
-        return this.toStringGenerals() + "Credit: " + this.getCredit();
+        return super.toString() + "Credit: " + this.getCredit();
     }
 
 }

@@ -32,10 +32,8 @@ public class Salesman extends Account implements Serializable {
         return confirmationState.equals(Confirmation.ACCEPTED);
     }
 
-
-    @Override
     public String toString() {
-        String result = this.toStringGenerals();
+        String result = super.toString();
         result += "Company: " + this.getCompany() + "\n";
         result += "Credit: " + this.getCredit() + "\n";
         result += "Confirmation State: " + this.confirmationState.toString() + "\n";

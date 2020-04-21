@@ -14,9 +14,8 @@ public class Boss extends Account implements Serializable {
         return !allBosses.isEmpty();
     }
 
-    @Override
     public String toString() {
-        return this.toStringGenerals();
+        return super.toString();
     }
 
 }
