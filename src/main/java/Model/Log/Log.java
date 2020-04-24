@@ -14,7 +14,9 @@ public abstract class Log extends RandomString {
         return date;
     }
 
-    public abstract String toString();
+    public String toString(){
+        return "Date: "+getDate().toString();
+    };
 
 
 }

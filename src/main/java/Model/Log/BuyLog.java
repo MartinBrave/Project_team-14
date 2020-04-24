@@ -80,6 +80,7 @@ public class BuyLog extends Log implements Serializable {
                 "Pay Amount: " + payAmount + "\n" +
                 "Off Amount: " + offAmount + "\n" +
                 "Delivery State: " + deliveryState + "\n" +
-                toStringOffCodeUsage() + toStringProducts();
+                toStringOffCodeUsage() + toStringProducts()+
+                super.toString();
     }
 }
