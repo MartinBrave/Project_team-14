@@ -13,16 +13,19 @@ import java.util.concurrent.TimeUnit;
 
 public class SpecialOffCode implements Runnable, Serializable {
 
-    private int timeInMinute;
-    private int ceiling;
-    private boolean activeness;
-    private int percentage;
-    private int numberOfTimesItCanBeUsed;
+    //for example now every 60 minutes one OffCode is given to a user
+    private int timeInMinute = 60;
 
-    //we call the function when everything else is initialised
+    //it means for example now the OffCode given now is authentic for 24 hours
+    private int durationInHour = 24;
+    private int ceiling = 10000;
+    private boolean activeness = true;
+    private int percentage = 20;
+    private int numberOfTimesItCanBeUsed = 1;
+
     public void activate() {
-        run();
         activeness = true;
+        run();
     }
 
     public void deactivate() {
@@ -37,17 +40,15 @@ public class SpecialOffCode implements Runnable, Serializable {
         this.timeInMinute = timeInMinute;
     }
 
-    public void setCeiling(int ceiling) {
-        this.ceiling = ceiling;
-    }
+    public void setOffCodeDurationInHour(int durationInHour) { this.durationInHour = durationInHour; }
+
+    public void setCeiling(int ceiling) { this.ceiling = ceiling; }
 
     public void setNumberOfTimesItCanBeUsed(int numberOfTimesItCanBeUsed) {
         this.numberOfTimesItCanBeUsed = numberOfTimesItCanBeUsed;
     }
 
-    public void setPercentage(int percentage) {
-        this.percentage = percentage;
-    }
+    public void setPercentage(int percentage) { this.percentage = percentage; }
 
     @Override
     public void run() {
@@ -55,7 +56,7 @@ public class SpecialOffCode implements Runnable, Serializable {
             return;
         }
         Date nowDate = new Date();
-        Date tomorrowDate = new Date(nowDate.getTime() + TimeUnit.HOURS.toMillis(24)); // Adds 24 hours
+        Date tomorrowDate = new Date(nowDate.getTime() + TimeUnit.HOURS.toMillis(durationInHour)); // Adds 24 hours
         Format formatter = new SimpleDateFormat("dd-MMM-yy hh-MM-ss");
         String today = formatter.format(nowDate);
         String tomorrow = formatter.format(tomorrowDate);
@@ -66,7 +67,7 @@ public class SpecialOffCode implements Runnable, Serializable {
             e.printStackTrace();
         }
         try {
-            Thread.sleep(timeInMinute * 60 * 1000);
+            Thread.sleep(TimeUnit.MINUTES.toMillis(timeInMinute));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
