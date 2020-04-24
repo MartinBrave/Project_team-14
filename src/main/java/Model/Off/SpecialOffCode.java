@@ -20,9 +20,14 @@ public class SpecialOffCode implements Runnable, Serializable {
     private int numberOfTimesItCanBeUsed;
 
     //we call the function when everything else is initialised
-    public void activate() { run(); }
+    public void activate() {
+        run();
+        activeness = true;
+    }
 
-    public void deactivate() { activeness = false; }
+    public void deactivate() {
+        activeness = false;
+    }
 
     public void setActiveness(boolean activeness) {
         this.activeness = activeness;
@@ -32,17 +37,23 @@ public class SpecialOffCode implements Runnable, Serializable {
         this.timeInMinute = timeInMinute;
     }
 
-    public void setCeiling(int ceiling) { this.ceiling = ceiling; }
+    public void setCeiling(int ceiling) {
+        this.ceiling = ceiling;
+    }
 
     public void setNumberOfTimesItCanBeUsed(int numberOfTimesItCanBeUsed) {
         this.numberOfTimesItCanBeUsed = numberOfTimesItCanBeUsed;
     }
 
-    public void setPercentage(int percentage) { this.percentage = percentage; }
+    public void setPercentage(int percentage) {
+        this.percentage = percentage;
+    }
 
     @Override
     public void run() {
-        if (!activeness) { return; }
+        if (!activeness) {
+            return;
+        }
         Date nowDate = new Date();
         Date tomorrowDate = new Date(nowDate.getTime() + TimeUnit.HOURS.toMillis(24)); // Adds 24 hours
         Format formatter = new SimpleDateFormat("dd-MMM-yy hh-MM-ss");
