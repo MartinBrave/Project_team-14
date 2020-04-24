@@ -43,31 +43,43 @@ public class BuyLog extends Log implements Serializable {
         return RandomString.createID("BuyLog");
     }
 
+    private StringBuilder toStringSingleProduct(String productID){
+        StringBuilder result = new StringBuilder();
+        result.append("Product Name:").append(Product.getNameByID(productID)).append("\n");
+        result.append("Salesman: ").append(products.get(productID)).append("\n");
+        result.append("Price: ").append(prices.get(productID)).append("\n");
+        if (salePercentage.get(productID) == 0) {
+            result.append("The product wasn't on sale." + "\n");
+        } else {
+            result.append("The product was on sale with percentage: ").append(salePercentage.get(productID)).append("\n");
+        }
+        result.append("------------------------------------------").append("\n");
+        return result;
+    }
+
+    private String toStringProducts() {
+        StringBuilder result = new StringBuilder();
+        result.append("Products: " + "\n");
+        for (String productID : products.keySet()) {
+            result.append(toStringSingleProduct(productID));
+        }
+        return result.toString();
+    }
+
+    private String toStringOffCodeUsage() {
+        if (wasOffCodeUsed) {
+            return "No offCode was used." + "\n";
+        } else {
+            return "OffCode was used with discount percentage: " + offCodePercentage + "\n";
+        }
+    }
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder();
-        result.append("Customer: ").append(customerUsername).append("\n");
-        result.append("Pay Amount: ").append(payAmount).append("\n");
-        result.append("Off Amount: ").append(offAmount).append("\n");
-        result.append("Delivery State: ").append(deliveryState).append("\n");
-        result.append("Products: " + "\n");
-        for (String productID : products.keySet()) {
-            result.append("Product Name:").append(Product.getNameByID(productID)).append("\n");
-            result.append("Salesman: ").append(products.get(productID)).append("\n");
-            result.append("Price: ").append(prices.get(productID)).append("\n");
-            if (salePercentage.get(productID) == 0) {
-                result.append("The product wasn't on sale." + "\n");
-            } else {
-                result.append("The product was on sale with percentage: ").append(salePercentage.get(productID)).append("\n");
-            }
-            result.append("------------------------------------------").append("\n");
-        }
-        if (wasOffCodeUsed) {
-            result.append("No offCode was used.");
-        } else {
-            result.append("OffCode was used with discount percentage: ").append(offCodePercentage).append("\n");
-        }
-        return result.toString();
+        return "Customer: " + customerUsername + "\n" +
+                "Pay Amount: " + payAmount + "\n" +
+                "Off Amount: " + offAmount + "\n" +
+                "Delivery State: " + deliveryState + "\n" +
+                toStringOffCodeUsage() + toStringProducts();
     }
 }
