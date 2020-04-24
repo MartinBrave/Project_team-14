@@ -6,6 +6,7 @@ import Model.Product.Product;
 import java.util.ArrayList;
 
 public class Server {
+    /*
     private ArrayList<Account> loginUsers;
     private LoginManager loginManager;
     private BossManager bossManager;
@@ -25,4 +26,6 @@ public class Server {
         productPageManager = new ProductPageManager();
         abstractCart = new ArrayList<>();
     }
+
+     */
 }

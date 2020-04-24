@@ -1,9 +1,11 @@
 package Model.Log;
 
 import Model.RandomString;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class Log extends RandomString {
+public abstract class Log extends RandomString implements Serializable {
     private Date date;
 
     public Log() {

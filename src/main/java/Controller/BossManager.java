@@ -1,6 +1,7 @@
 package Controller;
 
 public class BossManager {
+    /*
     private CategoryManager categoryManager;
     private OffCodeManager offCodeManager;
     private RequestManager requestManager;
@@ -10,4 +11,6 @@ public class BossManager {
         offCodeManager = new OffCodeManager();
         requestManager = new RequestManager();
     }
+
+     */
 }

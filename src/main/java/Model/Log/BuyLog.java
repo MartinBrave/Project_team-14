@@ -6,7 +6,7 @@ import Model.RandomString;
 import java.io.*;
 import java.util.HashMap;
 
-public class BuyLog extends Log implements Serializable {
+public class BuyLog extends Log {
 
     //the first argument is productID and the second one is salesmanID
     private HashMap<String, String> products = new HashMap<>();

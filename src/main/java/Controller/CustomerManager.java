@@ -1,6 +1,7 @@
 package Controller;
 
 public class CustomerManager {
+    /*
     private OrderManager orderManager;
     private PurchaseManager purchaseManager;
 
@@ -8,4 +9,6 @@ public class CustomerManager {
         orderManager = new OrderManager();
         purchaseManager = new PurchaseManager();
     }
+
+     */
 }
