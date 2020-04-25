@@ -64,6 +64,10 @@ public class Product extends RandomString implements Serializable {
         return null;
     }
 
+    public String getProductID() {
+        return productID;
+    }
+
     public static ArrayList<Product> getAllProducts() {
         return allProducts;
     }

@@ -44,6 +44,10 @@ public class Sale extends Off implements Serializable {
         return productID.contains(productID);
     }
 
+    public String getSaleID() {
+        return saleID;
+    }
+
     public ArrayList<String> listProducts() {
         return productIDs;
     }

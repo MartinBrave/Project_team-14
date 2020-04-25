@@ -32,6 +32,10 @@ public class Category extends RandomString implements Serializable {
         return (this.parentCategoryName != null);
     }
 
+    public String getCategoryName() {
+        return categoryName;
+    }
+
     public void addProductToCategory(String productID) {
         this.allProductIDs.add(productID);
     }

@@ -1,11 +1,21 @@
 package Controller.DataBase;
 
-public class startOfProgramme extends DataBase{
+import java.io.IOException;
 
-    public void startProgramme(){
+public class startOfProgramme extends DataBase {
+
+    public void update() {
+        try {
+            makeDirectories();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void startProgramme() throws IOException, ClassNotFoundException {
         makeDirectories();
         updateBosses();
-        updateBuyLog();
+        updateBuyLogs();
         updateCategories();
         updateComments();
         updateCustomers();
@@ -39,7 +49,7 @@ public class startOfProgramme extends DataBase{
     }
 
     @Override
-    public void updateBuyLog() {
+    void updateBuyLogs() {
 
     }
 
@@ -69,8 +79,9 @@ public class startOfProgramme extends DataBase{
     }
 
     @Override
-    protected void updatePoints() {
+    protected void updatePoints() throws IOException, ClassNotFoundException {
 
     }
 
 }
+

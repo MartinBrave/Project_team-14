@@ -20,7 +20,7 @@ public class OffCode extends Off implements Serializable {
         allOffCodes.add(this);
 
         //because IDs are generally too long I decided to to make the length the random String 5 in order for more comfort
-        offCodeID = createID("OffCode").substring(0, "OffCode".length() + 5);
+        offCodeID = createID("OffCode");
     }
 
     private boolean canCustomerUseItWithUsername(String username) {
@@ -33,6 +33,10 @@ public class OffCode extends Off implements Serializable {
 
     private boolean isAuthenticAccordingToNumberOfTimesCanBeUsed() {
         return this.numberOfTimesCanBeUsed > 0;
+    }
+
+    public String getOffCodeID() {
+        return offCodeID;
     }
 
     //it checks whether the code is authentic or not by checking both date and number of times used

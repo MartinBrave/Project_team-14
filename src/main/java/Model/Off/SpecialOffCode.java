@@ -11,17 +11,27 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
 
-public class SpecialOffCode implements Runnable, Serializable {
+import Model.RandomString;
+import Model.Storage;
+
+import static Model.Storage.*;
+
+public class SpecialOffCode extends RandomString implements Runnable, Serializable {
 
     //for example now every 60 minutes one OffCode is given to a user
     private int timeInMinute = 60;
-
+    private String specialOffCodeID;
     //it means for example now the OffCode given now is authentic for 24 hours
     private int durationInHour = 24;
     private int ceiling = 10000;
     private boolean activeness = true;
     private int percentage = 20;
     private int numberOfTimesItCanBeUsed = 1;
+
+    public SpecialOffCode() {
+        allSpecialOffCodes.add(this);
+        specialOffCodeID = createID("SpecialOffCode---");
+    }
 
     public void activate() {
         activeness = true;
@@ -40,15 +50,25 @@ public class SpecialOffCode implements Runnable, Serializable {
         this.timeInMinute = timeInMinute;
     }
 
-    public void setOffCodeDurationInHour(int durationInHour) { this.durationInHour = durationInHour; }
+    public String getSpecialOffCodeID() {
+        return specialOffCodeID;
+    }
 
-    public void setCeiling(int ceiling) { this.ceiling = ceiling; }
+    public void setOffCodeDurationInHour(int durationInHour) {
+        this.durationInHour = durationInHour;
+    }
+
+    public void setCeiling(int ceiling) {
+        this.ceiling = ceiling;
+    }
 
     public void setNumberOfTimesItCanBeUsed(int numberOfTimesItCanBeUsed) {
         this.numberOfTimesItCanBeUsed = numberOfTimesItCanBeUsed;
     }
 
-    public void setPercentage(int percentage) { this.percentage = percentage; }
+    public void setPercentage(int percentage) {
+        this.percentage = percentage;
+    }
 
     @Override
     public void run() {

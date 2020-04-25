@@ -64,5 +64,9 @@ public class Point extends RandomString implements Serializable {
         return RandomString.createID("Point");
     }
 
+    public String getPointID() {
+        return this.pointID;
+    }
+
 
 }

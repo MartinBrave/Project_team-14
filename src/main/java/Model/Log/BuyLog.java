@@ -19,6 +19,7 @@ public class BuyLog extends Log {
 
 
     private String customerUsername;
+    private String buyLogID;
     private String offCodeID;
     private int payAmount;
     private int offAmount;
@@ -36,14 +37,18 @@ public class BuyLog extends Log {
             wasOffCodeUsed = false;
         }
         deliveryState = Delivery.PROCESSING;
-
+        this.buyLogID = createID();
     }
 
     public String createID() {
         return RandomString.createID("BuyLog");
     }
 
-    private StringBuilder toStringSingleProduct(String productID){
+    public String getBuyLogID() {
+        return buyLogID;
+    }
+
+    private StringBuilder toStringSingleProduct(String productID) {
         StringBuilder result = new StringBuilder();
         result.append("Product Name:").append(Product.getNameByID(productID)).append("\n");
         result.append("Salesman: ").append(products.get(productID)).append("\n");
@@ -80,7 +85,7 @@ public class BuyLog extends Log {
                 "Pay Amount: " + payAmount + "\n" +
                 "Off Amount: " + offAmount + "\n" +
                 "Delivery State: " + deliveryState + "\n" +
-                toStringOffCodeUsage() + toStringProducts()+
+                toStringOffCodeUsage() + toStringProducts() +
                 super.toString();
     }
 }

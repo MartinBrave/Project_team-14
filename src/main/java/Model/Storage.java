@@ -8,6 +8,7 @@ import Model.Category.Category;
 import Model.Log.BuyLog;
 import Model.Off.OffCode;
 import Model.Off.Sale;
+import Model.Off.SpecialOffCode;
 import Model.Product.Comment;
 import Model.Product.Point;
 import Model.Product.Product;
@@ -26,4 +27,5 @@ public class Storage {
     public static ArrayList<Boss> allBosses = new ArrayList<>();
     public static ArrayList<Customer> allCustomers = new ArrayList<>();
     public static ArrayList<Salesman> allSalesman = new ArrayList<>();
+    public static ArrayList<SpecialOffCode> allSpecialOffCodes = new ArrayList<>();
 }
