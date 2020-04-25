@@ -7,31 +7,31 @@ import java.util.ArrayList;
 
 public abstract class DataBase {
 
-    abstract void updateCustomers() throws IOException;
+    abstract void updateCustomers() throws IOException, ClassNotFoundException;
 
-    abstract void updateBosses() throws IOException;
+    abstract void updateBosses() throws IOException, ClassNotFoundException;
 
-    abstract void updateSalesmen() throws IOException;
+    abstract void updateSalesmen() throws IOException, ClassNotFoundException;
 
-    abstract void updateCategories() throws IOException;
+    abstract void updateCategories() throws IOException, ClassNotFoundException;
 
-    abstract void updateBuyLogs() throws IOException;
+    abstract void updateBuyLogs() throws IOException, ClassNotFoundException;
 
-    abstract void updateSales() throws IOException;
+    abstract void updateSales() throws IOException, ClassNotFoundException;
 
-    abstract void updateOffCodes() throws IOException;
+    abstract void updateOffCodes() throws IOException, ClassNotFoundException;
 
-    abstract void updateSpecialOffCodes() throws IOException;
+    abstract void updateSpecialOffCodes() throws IOException, ClassNotFoundException;
 
-    abstract void updateProducts() throws IOException;
+    abstract void updateProducts() throws IOException, ClassNotFoundException;
 
-    abstract void updateComments() throws IOException;
+    abstract void updateComments() throws IOException, ClassNotFoundException;
 
     abstract void updatePoints() throws IOException, ClassNotFoundException;
 
     public static void makeDirectories() throws IOException {
 
-        FileUtils.cleanDirectory(new File("src\\main\\resources\\DataBase"));
+      //  FileUtils.cleanDirectory(new File("src\\main\\resources\\DataBase"));
 
         File file = new File("src\\main\\resources\\DataBase");
         file.mkdirs();
@@ -74,7 +74,7 @@ public abstract class DataBase {
 
     public static ArrayList<String> listAllFileNamesInDirectory(String directory) {
         ArrayList<String> results = new ArrayList<>();
-        File[] files = new File("src\\main\\resources\\DataBase\\" + directory).listFiles();
+        File[] files = new File(directory).listFiles();
         assert files != null;
         for (File file : files) {
             if (file.isFile()) {
